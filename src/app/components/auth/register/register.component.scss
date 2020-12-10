@@ -1,0 +1,51 @@
+mat-card {
+
+	mat-card-title {
+		margin-bottom: 2rem;
+	}
+
+	mat-form-field {
+		width: 100%;
+		margin: 0.25rem 0;
+	}
+
+	figure {
+		position: relative;
+		margin: 0;
+		margin-bottom: 1rem;
+
+		img {
+			width: auto;
+			max-height: 300px;
+			max-width: 100%;
+			display: flex;
+			margin: 0 auto;
+		}
+
+		&:hover figcaption,
+		&:focus figcaption {
+			opacity: 1;
+		}
+
+		&:hover #myDelButton,
+		&:focus #myDelButton {
+			animation: shrink_and_rotate 0.5s 1 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		&:hover figcaption .caption-content,
+		&:focus figcaption .caption-content {
+			transform: translate(0px, 0px);
+		}
+
+		figcaption {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(63, 97, 132, 0.5);
+			opacity: 0;
+			transition: all 300ms ease-in-out;
+		}
+	}
+}

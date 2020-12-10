@@ -1,0 +1,263 @@
+{
+	"APP_NAME": " Yunity",
+	"auth": {
+		"login": {
+			"button": "Login",
+			"forgotten_pwd": "Forgotten password",
+			"register": "Don't have an account?",
+			"title": "Howdy guest, please login"
+		},
+		"register": {
+			"button": "Join in",
+			"title": "Create Account"
+		},
+		"reset": {
+			"button": "Reset password",
+			"title": "To reset your password, enter the email address you use to sign in to Yunity."
+		},
+		"confirm-password-reset": {
+			"title": "Set a new password",
+			"subtitle": "Please enter and confirm your new password"
+		},
+		"confirm-email-address": {
+			"text": "Congrats! Your account is verified",
+			"button": "Back to Login page"
+		}
+	},
+	"dialog": {
+		"delete_image": {
+			"title": "Would you delete this image?",
+			"subtitle": "This will permanently delete all data. After you delete this, it can't be recovered."
+		},
+		"delete_post":{
+			"title":  "Delete this post?",
+			"subtitle":"This action can not be undone."
+		},
+		"discard_changes": "Discard changes?",
+		"avatar": {
+			"title": "Add a new profile image",
+			"subtitle": "Crop the image"
+		},
+		"action": {
+			"delete": "Delete",
+			"cancel": "Cancel",
+			"upload": "Upload",
+			"confirm": "OK"
+		}
+	},
+	"forms": {
+		"input": {
+			"change_password": "Change password",
+			"content": "Content",
+			"email": "Email",
+			"featured_image": "Featured image",
+			"img_url": "Image URL",
+			"name": "Name",
+			"new_password_confirm": "Confirm new password",
+			"new_password": "New password",
+			"password_confirm": "Confirm Password",
+			"password": "Password",
+			"save_changes": "Save changes",
+			"save": "Save",
+			"search": "Search...",
+			"tags": "Tags",
+			"title": "Title"
+		},
+		"validation": {
+			"email": "Invalid email address",
+			"url": "Invalid URL",
+			"maxlength": "Too long",
+			"minlength": "Too short",
+			"pwd_match": "Passwords do not match",
+			"required": "Required field",
+			"search-minlength": "Search text must be at least 3 characters long.",
+			"file-not-supported": "File type not supported"
+		}
+	},
+	"navbar": {
+		"language": "Language",
+		"login": "Login",
+		"more": {
+			"delete": "Delete",
+			"sorting": "Sort by",
+			"filters": "Filters",
+			"show": "Show",
+			"view-list": "List view",
+			"view-grid": "Grid view"
+		},
+		"sort-by-date": {
+			"asc": "Oldest first",
+			"desc": "Newest first"
+		},
+		"sort-by-title": "Title"	
+	},
+	"post": {
+		"filters": {
+			"all-authors": "All",
+			"begin-date": "Begin date",
+			"end-date": "End date",
+			"save": "Done",
+			"reset": "Clear"
+		},
+		"end-search": "No more results that match",
+		"end-list": "No more posts!",
+		"go-to-original": "Go to original Post"
+	},
+	"profile": {
+		"acd": "ACD",
+		"campaign": "Campaign",
+		"employeeId": "EmployeeID",
+		"lastLogin": "Last login",
+		"lastLoginLocation": "Last login location",
+		"location_not_available": "Location not available",
+		"location": "Location",
+		"workPlace": "Work Place",
+		"tab":{
+			"info": "Information",
+			"account": "My account"
+		}
+	},
+	"title": {
+		"app": "Yunity",
+		"apps": "Applications",
+		"confirm-email-address": "Email address confirmed",
+		"confirm-password-reset":"Change your password",
+		"favorites": "Favorites",
+		"home": "Yunity",
+		"login": "Login",
+		"profile": "Your Profile",
+		"profile-visiting": "Visiting profile",
+		"posts": {
+			"edit": "Edit Post",
+			"create": "Create Post",
+			"show": "Show Post",
+			"list": "Recent Posts"
+		},
+		"register": "Register",
+		"reset-password": "Reset Password",
+		"search": "Search post",
+		"settings": "Settings",
+		"signup": "Sign Up",
+		"upload": "Upload Image"
+	},
+	"toast": {
+		"apps": {
+			"calling": "Codificación grabada correctamente",
+			"ticket": "Incidencia grabada correctamente",
+			"complaint": "Reclamación grabada correctamente"
+		},
+		"settings_saved": "Settings saved",
+		"image": {
+			"created": "Image uploaded correctly!",
+			"liked": "Added to favorites",
+			"not_liked": "Removed from favorites",
+			"deleted": "Image deleted"
+		},
+		"logged_in": "You are already logged in",
+		"close": "CLOSE",
+		"reset_pwd": "Email sent, please check your inbox",
+		
+		"profile": "Your Profile has been updated",
+		"firebase": {
+			"auth/account-exists-with-different-credential": "Account already exists with differents credentials",
+			"auth/email-already-in-use": "The email address is already in use by another account.",
+			"auth/invalid-credential": "Invalid credentials",
+			"auth/operation-not-allowed": "Operation not allowed",
+			"auth/popup-closed-by-user": "Pop up closed by user",
+			"auth/requires-recent-login": "This operation is sensitive and requires recent authentication. Log in again before retrying this request",
+			"auth/user-cancelled": "Login cancelled by user",
+			"auth/user-not-found": "There is no user record corresponding to this identifier. The user may have been deleted.",
+			"auth/weak-password": "Password should be at least 6 characters",
+			"auth/wrong-password": "The password is invalid or the user does not have a password",
+			"storage/canceled": "Firebase Storage: User canceled the upload.",
+			"storage/invalid-argument": "Firebase Storage: Expected valid full URL but got an invalid one.",
+			"storage/object-not-found": "Firebase Storage: Object 'uploads/avatar' does not exist."
+		},
+		"server": {
+			"access_denied": "Access denied"
+		},
+		"auth": {
+			"access_denied": "Access denied",
+			"email_confirmed": "Your email has been verified",
+			"login": "You have signed in successfully",
+			"password-changed": "Your password has been changed successfully",
+			"pwd_sent": "We have e-mailed your password reset link!",
+			"pwd_user": "We can't find a user with that e-mail address.",
+			"signup": "Registered correctly, now check your email inbox to verify your account",
+			"social_login": "You have signed in with {{ social }} successfully",
+			"verify-berofe-login": "Please, verify your email account before logining in"
+		},
+		"post": {
+			"created": "Post Created!",
+			"updated": "Post Updated!",
+			"deleted": "Post Deleted!",
+			"empty": "Post cannot be empty!"
+		},
+		"cropper": {
+			"failed": "Fail on loading image"
+		}
+	},
+	"tooltips": {
+		"fab": {
+			"scroll": "Go to top",
+			"edit": "Edit Post",
+			"create": "Create Post"
+		},
+		"filter": "Filters",
+		"language": "Language",
+		"login": "Login",
+		"menu": "Menu",
+		"more": "More actions",
+		"search-box": {
+			"search": "Searching",
+			"close": "Delete searching",
+			"back": "Close searching"
+		},
+		"sort-by": "Sorting",
+		"view-grid": "Grid view",
+		"view-list": "List view"
+	},
+	"settings": {
+		"button": "Save Changes",
+		"appearance": {
+			"section": "Appearance",
+			"title": "Change the current theme",
+			"description": "Choose between light and dark theme"
+		},
+		"language": {
+			"title": "Change the language app",
+			"description": "Select language",
+			"input": "Language"
+		},
+		"other": "Others"
+	},
+	"sidenav": {
+		"appointments": "Appointments",
+		"apps": "Apps",
+		"business": "Business",
+		"corporate": "Corporate",
+		"documents": "Documents",
+		"favorites": "Favorites",
+		"feeds": "Feeds",
+		"gallery": "Gallery",
+		"help": "Help",
+		"login": "Login",
+		"logout": "Logout",
+		"polls": "Polls",
+		"settings": "Settings",
+		"signup": "Sign Up",
+		"wall": "Wall"
+	},
+	"upload": {
+		"browse": "Browse ...",
+		"button": "Upload",
+		"cancel": "Cancel",
+		"crop": "Crop",
+		"drag_and_drop": "Drag and Drop your image file here",
+		"label": "select an image",
+		"loader": "Uploading image...",
+		"progress": "Progress: {{progress}} % Complete",
+		"reset": "Reset",
+		"select": "Select"
+	}
+}

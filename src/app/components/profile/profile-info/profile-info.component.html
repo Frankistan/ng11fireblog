@@ -1,0 +1,23 @@
+<mat-list>
+	<mat-list-item>
+		<div mat-line>
+			<span mat-list-icon [matTooltipClass]="'tooltip'" matTooltip="Campaña">
+				<i class="fas fa-campground"></i>
+			</span>
+			<span>{{ 'profile.campaign' | translate }} :  {{ user.campaign }}</span>
+		</div>
+	</mat-list-item>
+	<mat-list-item *ngFor="let item of items">
+		<mat-icon mat-list-icon [matTooltipClass]="'tooltip'" matTooltip="{{ item.tooltip | translate }}">{{item.icon}}</mat-icon>
+		<div mat-line>
+			<span *ngIf="item.icon!='access_time'">
+				{{ item.tooltip | translate }} : {{ item.value }}
+			</span>
+
+			<time *ngIf="item.icon=='access_time'">
+				{{ item.value | amDateFormat: 'DD-MM-YYYY' }}
+				( {{ ( item.value )| amLocale: locale | amTimeAgo }} )
+			</time>
+		</div>
+	</mat-list-item>
+</mat-list>

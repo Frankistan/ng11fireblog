@@ -1,0 +1,33 @@
+<mat-toolbar class="mat-elevation-z11 sidenav-toolbar">
+	<a routerLink="/profile" *ngIf="user$ | async as user;">
+		<mat-list>			
+			<mat-list-item fxLayout="column" fxFlexAlign="start">
+				<ng-container *ngIf="user.photoURL==''; then avatar else img"></ng-container>
+
+						<ng-template #avatar>
+							<ngx-avatar  
+								fxFlexOrder="1"
+								matListAvatar 				 
+								[size]="56" 
+								[name]="user.displayName.split(' ', 2).join(' ')" 
+								[round]="true" 
+								[@scaleAnimation]>
+							</ngx-avatar>
+						</ng-template>
+						
+						<ng-template #img>
+							<img
+								fxFlexOrder="1"
+								matListAvatar 
+								[src]="user.photoURL" 
+								[@scaleAnimation] />
+						</ng-template>
+
+				<div fxFlexOrder="2" class="userdata">
+					<p  [@fadeInOut] > {{ user.displayName }} </p>
+					<p  [@fadeInOut] > {{ user.email }} </p>
+				</div>
+			</mat-list-item>
+		</mat-list>
+	</a>
+</mat-toolbar>

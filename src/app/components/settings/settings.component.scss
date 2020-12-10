@@ -1,0 +1,29 @@
+.settings {
+	margin: 0 0.5rem;
+
+	mat-card {
+
+		mat-list {
+			h3 {
+				padding: 1rem 0;
+			}
+
+			.mat-list-item-content {
+				padding: 0 !important;
+			}
+		}
+
+		.icon-font {
+			margin-left: 0.5rem;
+
+			.fa-moon-stars:before {
+				content: "\f755";
+			}
+
+			.svg-inline--fa.fa-w-16 {
+				width: 21px;
+			}
+		}
+	}
+
+}

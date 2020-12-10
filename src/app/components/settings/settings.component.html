@@ -1,0 +1,64 @@
+<div fxLayoutAlign="center" *ngIf="user$ | async as user;" class="settings">
+	<mat-card fxLayout="column" fxFlex="100" fxFlex.sm="65" fxFlex.gt-sm="65">
+		<form autocomplete="off" novalidate [formGroup]="form" (submit)="save(user)">
+
+			<mat-card-content>
+				<mat-list>
+					<h3 matSubheader>
+						{{ "settings.appearance.section" | translate }}
+					</h3>
+					<mat-list-item>
+						<mat-icon matListIcon>format_color_fill</mat-icon>
+						<h4 matLine>
+							{{ "settings.appearance.title" | translate }}
+						</h4>
+						<p matLine>
+							{{ "settings.appearance.description" | translate }}
+						</p>
+						<span fxLayoutAlign="space-between">
+							<mat-icon style="margin-right: 0.5rem;">brightness_5
+							</mat-icon>
+							<mat-slide-toggle name="isDarkTheme" formControlName="isDarkTheme">
+							</mat-slide-toggle>
+
+							<span class="icon-font">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon-stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-moon-stars fa-w-16 fa-1x">
+									<path fill="currentColor" d="M332.2 426.4c-93.1 17.7-178.5-53.7-178.5-147.7 0-54.2 29-104 76.1-130.8 7.3-4.1 5.4-15.1-2.8-16.7C108.7 109.4 0 200 0 320c0 106 85.8 192 191.8 192 59.2 0 113.2-26.9 149-71.1 5.3-6.5-.5-16.1-8.6-14.5zM304 96l16-32 32-16-32-16-16-32-16 32-32 16 32 16 16 32zm154.7 85.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208l-53.3-26.7z" class=""></path>
+								</svg>
+							</span>
+						</span>
+					</mat-list-item>
+					<mat-divider></mat-divider>
+					<h3 matSubheader>{{ "settings.other" | translate }}</h3>
+					<mat-list-item>
+						<mat-icon matListIcon>language</mat-icon>
+						<h4 matLine>
+							{{ "settings.language.title" | translate }}
+						</h4>
+						<p matLine>
+							{{ "settings.language.description" | translate }}
+						</p>
+						<mat-form-field fxFlex="23">
+							<mat-select [placeholder]="
+                                    'settings.language.input' | translate
+                                " [value]="language" name="language" formControlName="language">
+								<mat-option *ngFor="let language of languages" [value]="language">
+									{{
+                                        language.split("-")[1] == "ES"
+                                            ? "Español"
+                                            : "English"
+                                    }}
+								</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</mat-list-item>
+				</mat-list>
+			</mat-card-content>
+			<mat-card-actions align="end">
+				<button type="submit" color="primary" mat-raised-button [disabled]="!form.valid &&( form.dirty || form.untouched)">
+					{{ 'forms.input.save' | translate }}
+				</button>
+			</mat-card-actions>
+		</form>
+	</mat-card>
+</div>

@@ -1,0 +1,40 @@
+<div fxLayoutAlign="center" *ngIf="user$ | async as user;">
+	<mat-card fxLayout="column" fxFlex="100" fxFlex.gt-sm="65">
+		
+		<mat-card-header 
+			class="profile-header" 
+			fxLayout="row" 
+			fxLayout.xs="column" 
+			fxLayoutAlign="space-around end" 
+			fxLayoutAlign.lt-md="start start">
+			<mat-card-title>
+				{{ user.displayName | uppercase }}
+			</mat-card-title>
+			<mat-card-subtitle>
+				{{ user.email }}
+			</mat-card-subtitle>
+
+		</mat-card-header>
+
+		<button class="avatar" (click)="openUploadDlg(user)">
+			<img mat-card-avatar [src]="user.photoURL" />
+			<div class="caption">
+				<div class="caption-text">
+					change avatar
+				</div>
+			</div>
+		</button>
+
+		<mat-card-content >
+			<mat-tab-group  [attr.mat-stretch-tabs]="(isMobile$|async) ? '' : null" mat-align-tabs="end">
+				<mat-tab label="{{ 'profile.tab.info' | translate}}">
+					<app-profile-info [user]="user"></app-profile-info>
+				</mat-tab>
+				<mat-tab label="{{ 'profile.tab.account' | translate}}">
+					<app-profile-form ></app-profile-form>
+				</mat-tab>
+			</mat-tab-group>
+
+		</mat-card-content>
+	</mat-card>
+</div>

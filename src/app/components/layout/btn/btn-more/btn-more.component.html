@@ -1,0 +1,31 @@
+<button mat-icon-button 
+	fxHide.gt-xs
+    matTooltip="{{ 'tooltips.more' | translate }}"
+    [matTooltipClass]="'tooltip'"
+    [matMenuTriggerFor]="postListMenu">
+    <mat-icon>more_vert</mat-icon>
+</button>
+
+<mat-menu #postListMenu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="sortMenu">{{ 'navbar.more.sorting' | translate }}</button>
+    <button mat-menu-item (click)="filterNavRef.open()">{{ 'navbar.more.filters' | translate }}</button>
+    <button mat-menu-item [matMenuTriggerFor]="viewMenu">{{ 'navbar.more.show' | translate }}</button>
+</mat-menu>
+
+<mat-menu #sortMenu="matMenu">
+    <button mat-menu-item (click)="orderBy('created_at')" [ngClass]="{ 'mat-list-item active' : field=='created_at' }">
+        {{ ((field =="created_at" && reverse ) 
+		? 'navbar.sort-by-date.asc' : 'navbar.sort-by-date.desc' )| translate }}
+    </button>
+    <button mat-menu-item (click)="orderBy('title')" [ngClass]="{ 'mat-list-item active' : field=='title' }">
+        {{ 'navbar.sort-by-title' | translate }}
+        <mat-icon>
+            {{ (field =="originalName" && reverse ) ? 'arrow_drop_up' : 'arrow_drop_down'}}
+        </mat-icon>
+    </button>
+</mat-menu>
+
+<mat-menu #viewMenu="matMenu">
+    <button (click)="changeView(true)" mat-menu-item>{{ 'navbar.more.view-list' | translate }}</button>
+    <button (click)="changeView(false)" mat-menu-item>{{ 'navbar.more.view-grid' | translate }}</button>
+</mat-menu>

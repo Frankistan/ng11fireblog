@@ -1,0 +1,67 @@
+<div class="gb_Ie" >
+
+	<form class="gb_Ue aSVJYc-G0jgYd-ZMv3u"
+		[formGroup]="searchForm" novalidate autocomplete="off"
+		#form
+		ngClass.lt-sm="gb_He">
+
+		<!-- boton izquierda FLECHA DENTRO del input  -->
+		<!-- ACCION: cerrar/contraer la caja de texto -->
+		<!-- <button class="gb_qf" aria-label="Cerrar búsqueda" type="button"></button> -->
+		<button type="button" class="gb_qf" 
+			mat-icon-button 
+			matTooltip="{{ 'tooltips.search-box.back' | translate }}"
+            [matTooltipClass]="'tooltip'"
+			(click)="closeA($event)"
+			aria-label="Cerrar búsqueda">
+			<mat-icon>arrow_back</mat-icon>
+		</button> 
+
+		<!-- INPUT TEXT de busqueda -->
+		<!-- ACCTION: AL TENER EL FOCO, IR A LA RUTA /SEARCH -->
+		<div class="gb_vf">
+			<input class="gb_ff"
+				
+				formControlName="searchInput"
+				aria-label="Búsqueda" 
+				autocomplete="off" 
+				[placeholder]="'forms.input.search' | translate"
+				value="" name="q" 
+				role="combobox" 
+				type="text" 
+				(click)="goSearch()"
+				aria-hidden="false">
+		</div>
+
+		<!-- boton derecha X DENTRO del input -->
+		<!-- ACCION: IR A LA RUTA /POSTS -->
+		<!-- ACCION: cerrar/contraer la caja de texto -->
+		<!-- <button class="gb_rf" aria-label="Borrar búsqueda" type="button" style="visibility: visible;"></button> -->
+
+		<button type="button" 
+			(click)="closeX($event)"
+			class="gb_rf" 
+			style="visibility: visible;"
+			mat-icon-button 
+			matTooltip="{{ 'tooltips.search-box.close' | translate }}"
+            [matTooltipClass]="'tooltip'"
+			aria-label="Borrar búsqueda">
+			<mat-icon>close</mat-icon>
+		</button> 
+		<!-- boton izquierda LUPA DENTRO del input en modo DESKTOP-->
+		<!-- boton izquierda LUPA FUERA del input en modo MOVIL -->
+		<!-- ACCTION: AL click, IR A LA RUTA /SEARCH -->
+		<!-- <button class="gb_of" aria-label="Búsqueda" role="button" aria-hidden="false"></button> -->
+
+		<button type="button" 
+			class="gb_of" 
+			mat-icon-button 
+			matTooltip="{{ 'tooltips.search-box.search' | translate }}"
+            [matTooltipClass]="'tooltip'"
+			(click)="goSearch()"
+			aria-label="Búsqueda">
+			<mat-icon>search</mat-icon>
+		</button> 
+	</form>
+
+</div>

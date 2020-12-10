@@ -1,0 +1,76 @@
+<div fxLayoutAlign="center">
+	<mat-card fxLayout="column" fxFlex="100" fxFlex.sm="65" fxFlex.gt-sm="65">
+		<form autocomplete="off" novalidate [formGroup]="form" (submit)="save()">
+
+			<mat-card-title translate> auth.login.title </mat-card-title>
+
+			<mat-card-content>
+				<mat-form-field>
+					<input autofocus matInput [placeholder]="'forms.input.email' | translate" name="email" formControlName="email">
+					<mat-error>
+						{{ 'forms.validation.email' | translate }}
+					</mat-error>
+				</mat-form-field>
+
+				<mat-form-field>
+					<input matInput [placeholder]="'forms.input.password' | translate" name="password" formControlName="password" [type]="hide ? 'password' : 'text'" />
+					<mat-error>
+						{{ 'forms.validation.required' | translate }}
+					</mat-error>
+					<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+				</mat-form-field>
+
+				<!-- <app-custom-recaptcha-input formControlName="recaptcha" name="recaptcha">
+				</app-custom-recaptcha-input> -->
+
+			</mat-card-content>
+
+			<mat-card-actions align="end">
+				<button type="submit" color="primary" mat-raised-button [disabled]="!form.valid">
+					{{ 'auth.login.button' | translate }}
+				</button>
+			</mat-card-actions>
+
+		</form>
+
+		<div fxLayout="row" class="additional-links" fxLayoutAlign="space-between center">
+			<button fxFlex="45" color="primary" routerLink="/auth/register" mat-button>{{ 'auth.login.register' | translate }}</button>
+			<button fxFlex="45" color="primary" routerLink="/auth/reset-password" mat-button>{{ 'auth.login.forgotten_pwd' | translate }}</button>
+		</div>
+
+		<mat-divider [inset]="true"></mat-divider>
+
+		<div class="login-button" fxLayout="row" fxLayoutAlign.xs="space-between center" fxLayoutAlign.gt-xs="space-around center">
+
+			<button class="login-button-social__item google-img" (click)="socialLogin('google')">
+				<span class="icon-font"></span>
+			</button>
+
+			<button class="login-button-social__item facebook" (click)="socialLogin('facebook')">
+				<span class="icon-font">
+					<i class="fab fa-facebook-f"></i>
+				</span>
+			</button>
+
+			<button class="login-button-social__item github" (click)="socialLogin('github')">
+				<span class="icon-font">
+					<i class="fab fa-github-alt"></i>
+				</span>
+			</button>
+
+			<button class="login-button-social__item instagram" (click)="socialLogin('instagram')">
+				<span class="icon-font">
+					<i class="fab fa-instagram"></i>
+				</span>
+			</button>
+
+			<button class="login-button-social__item twitter" (click)="socialLogin('twitter')">
+				<span class="icon-font">
+					<i class="fab fa-twitter"></i>
+				</span>
+			</button>
+
+		</div>
+
+	</mat-card>
+</div>

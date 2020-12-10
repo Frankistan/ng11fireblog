@@ -1,0 +1,80 @@
+<form autocomplete="off" *ngIf="user$|async; let user" novalidate [formGroup]="form" (submit)="save(user)" >
+	<mat-card-content>
+		<mat-form-field>
+			<input matInput 
+				autofocus 
+				name="displayName" 
+				[placeholder]="'forms.input.name' | translate" 
+				formControlName="displayName" />
+			<mat-error>
+				{{ "forms.validation.required" | translate }}
+			</mat-error>
+			<mat-error *ngIf="form.get('displayName').hasError('minlength') && form.get('displayName').touched">
+				{{ "forms.validation.minlength" | translate }}
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput 
+				name="email" 
+				formControlName="email" 
+				[placeholder]="'forms.input.email' | translate" />
+		</mat-form-field>
+		<button mat-button
+			class="password-toogle" 
+			type="button" 
+			(click)="togglePasswordFields()">{{ "forms.input.change_password" | translate }}
+		</button>
+
+		<mat-form-field *ngIf="showFields">
+			<input matInput 
+				name="password" 
+				formControlName="password" 
+				[placeholder]="'forms.input.new_password' | translate" 
+				[type]="hide ? 'password' : 'text'" />
+			<mat-icon matSuffix (click)="hide = !hide">{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+			<mat-error *ngIf="form.get('password').hasError('minlength')">
+				{{ "forms.validation.minlength" | translate }}
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field *ngIf="showFields">
+			<input matInput 
+				name="password_confirm" 
+				formControlName="password_confirm" 
+				[placeholder]="'forms.input.new_password_confirm' | translate" 
+				[type]="hide ? 'password' : 'text'" />
+			<mat-icon matSuffix (click)="hide = !hide">{{
+				hide ? "visibility" : "visibility_off"
+			}}</mat-icon>
+			<mat-error *ngIf="form.get('password_confirm').hasError('MatchPassword')">
+				{{ "forms.validation.pwd_match" | translate }}
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput 
+				#imageURL 
+				name="photoURL" 
+				formControlName="photoURL"
+				[placeholder]="'forms.input.img_url' | translate"  />
+			<mat-error *ngIf="form.get('photoURL').hasError('url')">
+				{{ "forms.validation.url" | translate }}
+			</mat-error>
+		</mat-form-field>
+
+		<figure *ngIf="imageURL.value">
+			<img [src]="imageURL.value">
+			<figcaption fxLayoutAlign="center center">
+				<button id="myDelButton" 
+					mat-mini-fab color="primary" 
+					(click)="openDeleteAvatarDlg(user,$event)"						
+					aria-label="delete post featured image">
+					<mat-icon>close</mat-icon>
+				</button>
+			</figcaption>
+		</figure>
+	</mat-card-content>
+	<mat-card-actions align="end">
+		<button type="submit" color="primary" mat-raised-button [disabled]="form.invalid && form.dirty">
+			{{ "forms.input.save" | translate }}
+		</button>
+	</mat-card-actions>
+</form>

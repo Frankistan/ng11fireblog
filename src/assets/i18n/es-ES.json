@@ -1,0 +1,262 @@
+{
+	"APP_NAME": " Yunity",
+	"auth": {
+		"login": {
+			"button": "Entrar",
+			"forgotten_pwd": "Contraseña olvidada",
+			"register": "¿No tienes cuenta?",
+			"title": "Hola Invitado, por favor, inicia sesión"
+		},
+		"register": {
+			"button": "Unirme",
+			"title": "Crea una cuenta"
+		},
+		"reset": {
+			"button": "Reinicia contraseña",
+			"title": "Para resetar tu contraseña, introduce el email que usas para entrar en Yunity."
+		},
+		"confirm-password-reset": {
+			"title": "Elige una contraseña",
+			"subtitle": "Por favor, crea y confirma una nueva contraseña"
+		},
+		"confirm-email-address": {
+			"text": "Felicidades! Tu cuenta ha sido verificada",
+			"button": "Volver al inicio"
+		}
+	},
+	"dialog": {
+		"delete_image": {
+			"title": "¿Deseas borrar la imagen?",
+			"subtitle": "La imagen se eliminará de forma permanente. Esta acción no se puede deshacer."
+		},
+		"delete_post": {
+			"title": "¿Deseas eliminar el post?",
+			"subtitle": "Esta acción no se puede deshacer"
+		},
+		"discard_changes": "¿Descartar cambios?",
+		"avatar": {
+			"title": "Añade una imagen de perfil",
+			"subtitle": "Recorta la imagen"
+		},
+		"action": {
+			"delete": "Borrar",
+			"cancel": "Cancelar",
+			"upload": "Subir",
+			"confirm": "Aceptar"
+		}
+	},
+	"forms": {
+		"input": {
+			"change_password": "Cambiar contraseña",
+			"content": "Contenido",
+			"email": "Correo electrónico",
+			"featured_image": "Imagen destacada",
+			"img_url": "URL de imagen",
+			"name": "Nombre",
+			"new_password_confirm": "Confirma nueva contraseña",
+			"new_password": "Nueva contraseña",
+			"password_confirm": "Confirma contraseña",
+			"password": "Contraseña",
+			"save_changes": "Guardar Cambios",
+			"save": "Guardar",
+			"search": "Busca lo que quieras",
+			"tags": "Etiquetas",
+			"title": "Título"
+		},
+		"validation": {
+			"email": "Email no válido",
+			"url": "URL no válida",
+			"maxlength": "Demasiado largo",
+			"minlength": "Demasiado corto",
+			"pwd_match": "Las contraseñas no coinciden",
+			"required": "Campo obligatorio",
+			"search-minlength": "La búsqueda debe tener al menos 3 caracteres.",
+			"file-not-supported": "Tipo de archivo no soportado"
+		}
+	},
+	"navbar": {
+		"language": "Idioma",
+		"login": "Inicia Sesión",
+		"more": {
+			"delete": "Eliminar",
+			"sorting": "Ordenar por",
+			"filters": "Filtros",
+			"show": "Mostrar",
+			"view-list": "Vista de lista",
+			"view-grid": "Vista de cuadrícula"
+		},
+		"sort-by-date": {
+			"asc": "Más antiguo primero",
+			"desc": "Más nuevo primero"
+		},
+		"sort-by-title": "Título"
+	},
+	"post": {
+		"filters": {
+			"all-authors": "Todos",
+			"begin-date": "Fecha de inicio",
+			"end-date": "Fecha de fin",
+			"save": "Hecho",
+			"reset": "Limpiar"
+		},
+		"end-search": "Búsqueda sin resultados",
+		"end-list": "No hay más posts!",
+		"go-to-original": "Ir al post original"
+	},
+	"profile": {
+		"acd": "ACD",
+		"campaign": "Campaña",
+		"location": "Ubicación",
+		"employeeId": "ID Empleado",
+		"lastLogin": "Última conexión",
+		"lastLoginLocation": "Ubicación de última conexión",
+		"location_not_available": "Ubicación no disponible",
+		"workPlace": "Centro de Trabajo",
+		"tab": {
+			"info": "Información",
+			"account": "Mi cuenta"
+		}
+	},
+	"title": {
+		"app": "Yunity",
+		"apps": "Aplicaciones",
+		"confirm-email-address": "Cuenta confirmada",
+		"confirm-password-reset": "Cambia tu contraseña",
+		"favorites": "Favoritas",
+		"home": "Yunity",
+		"login": "Inicia Sesión",
+		"profile": "Tu Perfil",
+		"profile-visiting": "Visitando perfil",
+		"posts": {
+			"edit": "Editar Post",
+			"create": "Crear Post",
+			"show": "Mostrando Post",
+			"list": "Posts recientes"
+		},
+		"register": "Regístrate",
+		"reset-password": "Resetear Contraseña",
+		"search": "Buscar post",
+		"settings": "Ajustes",
+		"signup": "Regístrate",
+		"upload": "Subir imagen"
+	},
+	"toast": {
+		"apps": {
+			"calling": "Codificación grabada correctamente",
+			"ticket": "Incidencia grabada correctamente",
+			"complaint": "Reclamación grabada correctamente"
+		},
+		"settings_saved": "Ajustes guardados",
+		"image": {
+			"created": "Imagen subida correctamente!",
+			"liked": "Añadida a tus favoritas",
+			"not_liked": "Eliminada de tus favoritas",
+			"deleted": "Imagen borrada"
+		},
+		"logged_in": "Ya estás logueado",
+		"close": "CERRAR",
+		"profile": "Tu perfil ha sido actualizado",
+		"reset_pwd": "Email enviado, revisa tu correo",
+		"firebase": {
+			"auth/account-exists-with-different-credential": "La cuenta existe con credenciales distintas",
+			"auth/email-already-in-use": "El email ya lo usa otro usuario.",
+			"auth/invalid-credential": "Credenciales no válidas",
+			"auth/operation-not-allowed": "Operación no autorizada",
+			"auth/popup-closed-by-user": "Ventana cerrada por el usuario",
+			"auth/requires-recent-login": "Esta operación es sensible y requiere que te re-autentiques. Inicia sesión nuevamente",
+			"auth/user-cancelled": "Inicio de sesión cancelada por el usuario",
+			"auth/user-not-found": "Las credenciales no corresponden a ningún usuario. El usuario no existe o fue eliminado.",
+			"auth/weak-password": "La contraseña debe ser de al menos 6 caracteres",
+			"auth/wrong-password": "La contraseña no es válida o el usuario no existe",
+			"storage/canceled": "Almacenamiento en Firebase: El usuario canceló la subida.",
+			"storage/invalid-argument": "Almacenamiento en Firebase: Se esperaba una URL válida.",
+			"storage/object-not-found": "Almacenamiento en Firebase: La imagen no existe."
+		},
+		"server": {
+			"access_denied": "Acceso denegado"
+		},
+		"auth": {
+			"access_denied": "Acceso denegado",
+			"email_confirmed": "Tu cuenta ha sido verificada correctamente",
+			"login": "Has iniciado sesión con éxito!",
+			"password-changed": "Contraseña cambiada correctamente",
+			"pwd_sent": "¡Recordatorio de contraseña enviado!",
+			"pwd_user": "No podemos encontrar a un usuario con ese correo electrónico",
+			"signup": "Registrado correctamente. Revisa tu correo para verificar tu cuenta",
+			"social_login": "Has iniciado sesión correctamente con {{ social }}",
+			"verify-berofe-login": "Por favor, verifica tu cuenta antes de iniciar sesión"
+		},
+		"post": {
+			"created": "¡Post Creado!",
+			"updated": "¡Post Actualizado!",
+			"deleted": "¡Post Eliminado!",
+			"empty": "¡El post no puede estar vacío!"
+		},
+		"cropper": {
+			"failed": "Error al cargar la imagen"
+		}
+	},
+	"tooltips": {
+		"fab": {
+			"create": "Crear Post",
+			"edit": "Editar Post",
+			"scroll": "Ir arriba"
+		},
+		"filter": "Filtros",
+		"language": "Idioma",
+		"login": "Inicia Sesión",
+		"menu": "Menú principal",
+		"more": "Más acciones",
+		"search-box": {
+			"search": "Búsqueda",
+			"close": "Borrar búsqueda",
+			"back": "Cerrar búsqueda"
+		},
+		"sort-by": "Ordenar",
+		"view-grid": "Vista de cuadrícula",
+		"view-list": "Vista de lista"
+	},
+	"settings": {
+		"button": "Guardar Cambios",
+		"appearance": {
+			"section": "Apariencia",
+			"title": "Cambia el tema actual",
+			"description": "Elige entre tema oscuro o claro"
+		},
+		"language": {
+			"title": "Cambia el idioma de la aplicación",
+			"description": "Selecciona idioma",
+			"input": "Idioma"
+		},
+		"other": "Otros"
+	},
+	"sidenav": {
+		"appointments": "Citas pendientes",
+		"apps": "Aplicaciones",
+		"corporate": "Corporativo",
+		"business": "Negocio",
+		"documents": "Documentos",
+		"favorites": "Favoritas",
+		"feeds": "Blogs",
+		"help": "Ayuda",
+		"home": "Inicio",
+		"login": "Inicia Sesión",
+		"logout": "Desconexión",
+		"polls": "Encuestas",
+		"settings": "Ajustes",
+		"signup": "Regístrate",
+		"wall": "Muro"
+	},
+	"upload": {
+		"browse": "Selecciona ...",
+		"button": "Subir",
+		"cancel": "Cancelar",
+		"crop": "Recortar",
+		"drag_and_drop": "Arrastra y suelta aquí una imagen",
+		"label": "selecciona o suelta imagen aquí",
+		"loader": "Subiendo la foto...",
+		"progress": "Progreso: {{progress}} % Completado",
+		"reset": "Reiniciar",
+		"select": "Selecciona"
+	}
+}

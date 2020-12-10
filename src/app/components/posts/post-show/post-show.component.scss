@@ -1,0 +1,37 @@
+mat-card {
+	margin: 0.5rem;
+	border: 1px solid whitesmoke;
+	border-radius: 0.5rem;
+	background-color: rgba($color: #F5F5F5, $alpha: 0.7);
+
+	mat-card-header{
+		flex-direction: row-reverse;
+
+		mat-card-title{
+			cursor: pointer;
+
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+
+	.delete-button{
+		height: 3rem;
+		padding: 0.5rem;
+	}
+
+	mat-card-content{
+		overflow-x: auto;
+	}
+
+	mat-card-footer{
+		margin: 0;		
+	}
+	
+	img.featured_img{
+		width: 100%;
+		margin: 1rem 0;
+	}
+}
+

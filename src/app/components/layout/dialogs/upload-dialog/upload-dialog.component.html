@@ -1,0 +1,86 @@
+<div [overlayLoading]="isLoading" class="upload-dialog">
+	<div mat-dialog-title>
+		<div fxLayout="row" fxLayoutAlign="space-between center">
+			<input #fileInput type="file" access=".png,.jpg" (change)="fileChangeEvent($event)" style="display: none;" />
+			<button mat-raised-button color="primary" (click)="fileInput.click()">
+				<mat-icon>image</mat-icon>
+				{{ "upload.browse" | translate }}
+			</button>
+			<button mat-stroked-button (click)="crop()">
+				<mat-icon inline=true>crop</mat-icon>
+				{{ "upload.crop" | translate }}
+			</button>
+		</div>
+
+		<div class="image-tools" fxLayout="row" fxLayoutAlign="start center">
+			<button mat-mini-fab (click)="rotateLeft()">
+				<mat-icon>rotate_left</mat-icon>
+			</button>
+			<button mat-mini-fab (click)="flipVertical()">
+				<mat-icon>flip</mat-icon>
+			</button>
+			<button mat-mini-fab (click)="rotateRight()">
+				<mat-icon>rotate_right</mat-icon>
+			</button>
+			<button mat-mini-fab (click)="toggleContainWithinAspectRatio()">
+				<mat-icon>{{containWithinAspectRatio?'zoom_out_map' : 'filter_center_focus'}}</mat-icon>
+			</button>
+			<span fxFlex></span>
+			<button mat-button (click)="resetImage()">
+				{{ "upload.reset" | translate }}
+			</button>
+		</div>
+
+		<div fxLayout="row" fxLayoutAlign="center center">
+			<mat-slider min="0.1" max="1" step=".05" value="0.5" (input)="zoom($event)"></mat-slider>
+		</div>
+
+	</div>
+	<mat-dialog-content class="mat-typography">
+
+		<image-cropper 
+			[imageChangedEvent]="imageChangedEvent" 
+			[maintainAspectRatio]="true" 
+			[containWithinAspectRatio]="containWithinAspectRatio" 
+			[aspectRatio]="4 / 3" 
+			[resizeToWidth]="256" 
+			[cropperMinWidth]="128" 
+			[onlyScaleDown]="true" 
+			[roundCropper]="false" 
+			[canvasRotation]="canvasRotation" 
+			[transform]="transform" 
+			[alignImage]="'left'" 
+			[style.display]="showCropper ? null : 'none'" 
+			[format]="format" 
+			(imageLoaded)="imageLoaded()" 
+			(cropperReady)="cropperReady($event)" 
+			(loadImageFailed)="loadImageFailed()">
+		</image-cropper>
+		<img [src]="croppedImage" [style.border]="croppedImage ? '1px solid black' : 'none'" />
+
+
+	</mat-dialog-content>
+	<mat-dialog-actions align="end">
+		<button mat-raised-button [mat-dialog-close]="false" tabindex="-1" color="warn">
+			{{ "dialog.action.cancel" | translate }}
+		</button>
+		<button mat-stroked-button tabindex="2" [disabled]="!croppedImage" (click)="onConfirm()">
+			{{ "dialog.action.upload" | translate }}
+		</button>
+	</mat-dialog-actions>
+
+	<!-- <div *ngFor="let upload of fileService.uploads">
+		<p>Upload of {{upload.fileName}}</p>
+		<mat-progress-bar 
+			color="accent" 
+			mode="determinate" 
+			[value]="upload.percentage | async" min="0" max="100">
+		</mat-progress-bar>
+		<span 
+			[translate]="'upload.progress'" 
+			[translateParams]="{progress: (upload.percentage | async) | number:'.1-2' }">
+		</span>
+	</div> -->
+
+
+</div>

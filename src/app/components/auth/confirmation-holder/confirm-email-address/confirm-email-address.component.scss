@@ -1,0 +1,28 @@
+mat-card {
+
+	div.circle {
+		height: 76px;
+		display: flex;
+		border: 4px solid rgba(255, 255, 255, 0.6);
+		width: 76px;
+		border-radius: 76px;
+		margin: 0 auto;
+		background-color:rgba(255, 255, 255, 0.4);
+
+		mat-icon {
+			display: flex;
+			height:  54px;
+			width:  54px;
+			margin: 0 auto;
+			font-size: 54px;
+			align-self: center;
+		}		
+	}	
+
+	.text{
+		margin-top: 24px ;
+		display: flex;
+		align-self: center;
+	}
+
+}

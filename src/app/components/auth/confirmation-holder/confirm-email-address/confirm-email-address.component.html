@@ -1,0 +1,15 @@
+<div fxLayoutAlign="center">
+	<mat-card fxLayout="column" fxFlex="100" fxFlex.sm="65" fxFlex.gt-sm="65">
+
+		<mat-card-content  fxLayout="column" fxFlexAlign="center center">
+			<div class="circle">
+				<mat-icon>done_outline</mat-icon>
+			</div>
+			<p class="text">{{ 'auth.confirm-email-address.text' | translate }}</p>
+		</mat-card-content>
+		<mat-card-actions align="center">
+			<a mat-flat-button routerLink="/auth/login">{{ 'auth.confirm-email-address.button' | translate }}</a>
+		</mat-card-actions>
+
+	</mat-card>
+</div>

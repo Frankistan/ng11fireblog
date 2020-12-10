@@ -1,0 +1,19 @@
+div {
+	background-color: #DF9FA0;
+	height: calc(100% - 4rem);
+	width: 100%;
+
+	img {
+		object-fit: cover;
+		display: block;
+		width: 100%;
+		height: auto;
+		max-width: 500px;
+	}
+}
+
+@media (max-width: 600px) {
+	div {
+		height: calc(100% - 3.5rem);
+	}
+}

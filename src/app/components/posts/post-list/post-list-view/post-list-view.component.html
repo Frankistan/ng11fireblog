@@ -1,0 +1,26 @@
+<div fxLayoutAlign="center">
+	<mat-list fxLayout="column" fxFlex="100" fxFlex.sm="90" fxFlex.gt-sm="65">
+
+		<a [routerLink]="['/posts', post.id]" *ngFor="let post of data;let i = index;">
+			<mat-list-item>
+
+				<ngx-avatar matListAvatar [name]="post.title?.split(' ', 2).join(' ')" [round]="true">
+				</ngx-avatar>
+
+				<h3 matLine> #{{ (i+1) + " - " + post.title }} </h3>
+
+				<p matLine>
+					<span>
+						<mat-icon matListIcon>access_time</mat-icon> {{ post.created_at * 1000 | amDateFormat: "DD-MM-YYYY HH:mm" }}
+					</span>
+					<span class="interpunct">&#183;</span>
+					<span>
+						<mat-icon class="custom-icon">person</mat-icon> {{ post.authorName }}
+					</span>
+				</p>
+
+			</mat-list-item>
+		</a>
+
+	</mat-list>
+</div>

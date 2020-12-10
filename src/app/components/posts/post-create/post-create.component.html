@@ -1,0 +1,94 @@
+<div fxLayoutAlign="center" >
+	<mat-card fxLayout="column" fxFlex="100" fxFlex.sm="65" fxFlex.gt-sm="65"
+	*ngIf="user$ | async as user;">
+	
+	<form autocomplete="off" novalidate [formGroup]="form" (submit)="save(user)">
+
+			<mat-card-header fxLayoutAlign="center" class="post-create-header">
+				<figure *ngIf="imageURL.value">
+					<img [src]="imageURL.value">
+					<figcaption fxLayoutAlign="center center">
+						<button id="myDelButton" 
+							mat-mini-fab color="primary" 
+							(click)="form.controls['featured_image'].setValue('');" 
+							aria-label="delete post featured image">
+							<mat-icon>close</mat-icon>
+						</button>
+					</figcaption>
+				</figure>
+			</mat-card-header>
+
+			<mat-card-content>
+				<mat-form-field>
+					<input matInput 
+						#imageURL
+						name="featured_image" 
+						formControlName="featured_image"
+						[placeholder]="'forms.input.featured_image' | translate" />
+					<mat-error *ngIf="form.get('featured_image').hasError('url')">
+						{{ 'forms.validation.url' | translate }}
+					</mat-error>
+				</mat-form-field>
+			
+				<mat-form-field>
+					<input matInput
+						autofocus					 
+						name="title" 
+						formControlName="title"
+						[placeholder]="'forms.input.title' | translate" />
+                    <mat-error>
+                        {{ 'forms.validation.required' | translate }}
+                    </mat-error>
+				</mat-form-field>
+				
+                <div class="tinymce">
+					<tinymce 
+						matInput
+						[config]="options"
+						name="content" 
+						formControlName="content">
+					</tinymce>
+				</div>
+
+				<mat-form-field >
+					<mat-chip-list #chipList formArrayName="tags">
+						<mat-chip 							
+							*ngFor="let tag of form.controls['tags']['controls']; let i=index;" 
+							[formGroupName]="i" 
+							[selectable]="selectable" 
+							[removable]="removable" 
+							(removed)="removeTag(i)">
+							{{ tag.value }}
+							<mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+						</mat-chip>
+						<input 
+							[placeholder]="'forms.input.tags' | translate"
+							[matChipInputFor]="chipList" 
+							[matChipInputAddOnBlur]="addOnBlur" 
+							(matChipInputTokenEnd)="addTag($event)" />
+					</mat-chip-list>
+					
+				</mat-form-field>
+				
+			</mat-card-content>
+
+			<mat-divider [inset]="true"></mat-divider>
+
+			<mat-card-actions align="end">
+			
+				<button 
+					[disabled]="disabled$|async"
+					type="submit"
+					mat-raised-button 
+					color="primary">
+                    {{ 'forms.input.save' | translate }}
+				</button>
+				
+			</mat-card-actions>
+			
+		</form> 
+	</mat-card>	
+</div>
+<pre>
+	{{ form.value | json }}
+</pre>

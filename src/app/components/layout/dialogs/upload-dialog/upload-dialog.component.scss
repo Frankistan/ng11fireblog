@@ -1,0 +1,30 @@
+mat-dialog-content {
+	max-height: 50vh;
+
+	image-cropper {
+		padding: 0;
+		background-color: #010101; //dark
+		background-color: #999999; // light
+	}
+}
+
+mat-form-field {
+	width: 100%;
+	margin: 0.25rem 0;
+}
+
+.image-tools {
+	margin-top: 1rem;
+}
+
+.mat-mini-fab {
+
+	background-color: #FFFFFF;
+	color: black;
+	box-shadow: none;
+
+
+	&:hover {
+		background-color: rgb(226, 226, 226);
+	}
+}

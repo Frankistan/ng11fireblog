@@ -1,0 +1,26 @@
+<mat-grid-list [rowHeight]="rowHeight" cols="{{ cols$|async }}" gutterSize="1rem">
+
+	<a [routerLink]="['/posts', i]" *ngFor="let post of data;let i = index ; trackBy: trackByIdx" >
+		<mat-grid-tile>
+
+			<mat-grid-tile-header>
+				<ngx-avatar size="52" [name]="post.title?.split(' ', 2).join(' ')" [round]="false">
+				</ngx-avatar>
+			</mat-grid-tile-header>
+
+			<div class="mat-grid-tile-content">
+				#{{ (i+1) + " - " + post.title }}
+			</div>
+
+			<mat-grid-tile-footer>
+				<p matLine>
+					<span> <mat-icon matListIcon>access_time</mat-icon> {{ post.created_at * 1000 | amDateFormat: 'DD-MM-YYYY HH:mm' }} </span>
+					<span class="interpunct">&#183;</span>
+					<span> <mat-icon class="custom-icon">person</mat-icon> {{ post.authorName }} </span>
+				</p>
+			</mat-grid-tile-footer>
+
+		</mat-grid-tile>
+	</a>
+
+</mat-grid-list>

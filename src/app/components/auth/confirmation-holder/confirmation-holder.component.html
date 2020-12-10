@@ -1,0 +1,10 @@
+<ng-container [ngSwitch]="mode" >
+
+	<ng-container *ngSwitchCase="'resetPassword'">
+		<app-confirm-password-reset></app-confirm-password-reset>
+	</ng-container>
+
+	<ng-container *ngSwitchCase="'verifyEmail'">
+		<app-confirm-email-address></app-confirm-email-address>
+	</ng-container>
+</ng-container>

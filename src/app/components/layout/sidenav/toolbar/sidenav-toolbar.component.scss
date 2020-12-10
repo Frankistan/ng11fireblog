@@ -1,0 +1,35 @@
+mat-toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-image: url('../../../../../assets/img/googleback.png');
+	background-position: center;
+	background-size: cover;
+	height: 6.75rem;
+	padding: 0;
+
+	ngx-avatar {
+		display: flex;
+		align-self: start;
+		border-radius: 50%;
+		object-fit: cover;
+		font: 24px / 56px Roboto;
+	}
+
+	.userdata {
+		line-height: normal;
+		font-size: 14px;
+
+		p {
+			margin: 0;
+			color: whitesmoke;
+			text-shadow: 2px 2px 4px black;
+			margin: 4px 0;
+
+			&:last-child {
+				font-size: 12px;
+			}
+		}
+
+	}
+}

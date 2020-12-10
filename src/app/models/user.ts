@@ -1,0 +1,20 @@
+export interface User {
+    uid: string,
+    createdAt?: number,
+    creationTime?: number,
+    displayName?: string |undefined,
+    email?: string,
+    employeeId?: string,
+    lastSignInTime?: any,
+    lastSignInLocation?: google.maps.LatLng,
+    photoURL?: string,
+    password?: string,
+    profileURL?: string,
+    providerId?: string,
+    ps?: string,
+    settings?: any,
+    workPlace?: string,
+	acd?: string,
+	campaign?: string,
+	emailVerified?:boolean
+}

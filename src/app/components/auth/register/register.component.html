@@ -1,0 +1,99 @@
+<div fxLayoutAlign="center">
+	<mat-card fxLayout="column" fxFlex="100" fxFlex.sm="65" fxFlex.gt-sm="65">
+		<form  
+			autocomplete="off" 
+			novalidate 
+			[formGroup]="form" 
+			(submit)="save()" >
+	
+			<mat-card-title translate> auth.register.title </mat-card-title>
+
+			<mat-card-content>
+		
+				<mat-form-field>
+					<input matInput 
+						autofocus
+						name="displayName" 
+						formControlName="displayName"
+						[placeholder]="'forms.input.name' | translate"  />
+					<mat-error *ngIf="form.get('displayName').hasError('required') &&  (form.get('displayName').dirty || form.get('displayName').touched)">
+						{{ 'forms.validation.required' | translate }}
+					</mat-error>
+					<mat-error *ngIf="form.get('displayName').hasError('minlength') && form.get('displayName').touched">
+						{{ 'forms.validation.minlength' | translate }}
+					</mat-error>
+				</mat-form-field>
+		
+				<mat-form-field>
+					<input matInput 
+						[placeholder]="'forms.input.email' | translate" 
+						name="email" 
+						formControlName="email" />
+					<mat-error *ngIf="form.get('email').hasError('email') &&  (form.get('email').dirty || form.get('email').touched)">
+						{{ 'forms.validation.email' | translate }}
+					</mat-error>
+				</mat-form-field>
+		
+				<mat-form-field>
+					<input matInput 
+						[placeholder]="'forms.input.password' | translate" 
+						name="password" 
+						formControlName="password" 
+						[type]="hide ? 'password' : 'text'"/>
+					<mat-error *ngIf="form.get('password').hasError('required')">
+						{{ 'forms.validation.required' | translate }}
+					</mat-error>
+					<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+				</mat-form-field>
+		
+				<mat-form-field>
+					<input matInput 
+					[placeholder]="'forms.input.password_confirm' | translate"  
+					name="password_confirm" 
+					formControlName="password_confirm"
+						[type]="hide ? 'password' : 'text'" />
+					<mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+					<mat-error *ngIf="form.get('password_confirm').hasError('equalTo')">
+						{{ 'forms.validation.pwd_match' | translate }}
+					</mat-error>
+				</mat-form-field>
+		
+				<mat-form-field>
+					<input matInput 
+						#imageURL
+						name="photoURL" 
+						formControlName="photoURL" 
+						[placeholder]="'forms.input.img_url' | translate" />
+					<mat-error *ngIf="form.get('photoURL').hasError('pattern')">
+						{{ 'forms.validation.invalid-url' | translate }}
+					</mat-error>
+				</mat-form-field>
+		
+				<figure *ngIf="imageURL.value">
+					<img [src]="imageURL.value">
+					<figcaption fxLayoutAlign="center center">
+						<button id="myDelButton" 
+							mat-mini-fab color="primary" 
+							(click)="form.controls['photoURL'].setValue('');" 
+							aria-label="delete photoURL image">
+							<mat-icon>close</mat-icon>
+						</button>
+					</figcaption>
+				</figure>
+
+				<!-- <app-custom-recaptcha-input formControlName="recaptcha" name="recaptcha">
+				</app-custom-recaptcha-input> -->
+
+			</mat-card-content>
+
+			<mat-card-actions align="end">
+				<button type="submit" color="primary" 
+					mat-raised-button 
+					[disabled]="!form.valid">
+					{{ 'auth.register.button' | translate }}
+				</button>
+			</mat-card-actions>
+
+		</form>
+	</mat-card>
+</div>

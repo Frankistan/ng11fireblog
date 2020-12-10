@@ -1,0 +1,144 @@
+mat-card {
+	
+	mat-card-title {
+		margin-bottom: 2rem;
+	}
+
+	mat-form-field {
+		width: 100%;
+		margin: 0.25rem 0;
+	}
+
+	mat-divider {
+		margin-bottom: 1rem !important;
+	}
+
+	.additional-links {
+		margin: 1rem 0;
+	}
+}
+
+
+// SOCIAL BUTTONS' STYLES
+.login-button {
+	
+	a,
+	a:hover {
+		text-decoration: none;
+		outline: none;
+	}
+
+	button{
+		border: 0 none;
+		
+	}
+
+	.icon {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		stroke-width: 0;
+		stroke: currentColor;
+		fill: currentColor;
+	}
+
+	&__cnt {
+		margin-top: -35px;
+		text-align: center;
+		padding: 0 20px;
+		padding-bottom: 40px;
+		transition: all .3s;
+	}
+
+	&-social {
+		margin-top: 25px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+		&__item {
+			display: inline-flex;
+			outline: none;
+			width: 3rem;
+			height: 3rem;
+			margin: 15px;
+			border-radius: 50%;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			background: #405de6;
+			box-shadow: 0px 7px 30px rgba(43, 98, 169, 0.5);
+			position: relative;
+			font-size: 21px;
+			flex-shrink: 0;
+			transition: all .3s; 
+
+			@media screen and (max-width: 768px) {
+				width: 2.5rem;
+				height: 2.5rem;
+				margin: 0.5rem;
+			}
+
+			@media screen and (min-width: 768px) {
+				&:hover{
+					transform: scale(1.2);
+				}
+			}
+
+			&.facebook {
+				background: linear-gradient(45deg, #3b5998, #0078d7);
+				box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5);
+			}
+
+			&.google {
+				background:linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+				box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5);
+			}	
+			
+			&.google-img {
+				background-color: whitesmoke;
+				box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5);
+				background-image: url('../../../../assets/img/google1.png');
+				background-size: cover;
+				// background: radial-gradient(circle at 65% 15%, white 1px, whitesmoke 3%,rgb(202, 231, 231) 60%, rgb(202, 231, 231)  100%);  
+			}
+
+			&.twitter {
+				background: linear-gradient(45deg, #1da1f2, #0e71c8);
+				box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.7);
+			}
+
+			&.instagram {
+				background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+				box-shadow: 0px 4px 30px rgba(120, 64, 190, 0.6);
+			}
+
+			&.behance {
+				background: linear-gradient(45deg, #1769ff, #213fca);
+				box-shadow: 0px 4px 30px rgba(27, 86, 231, 0.7);
+			}
+
+			&.github {
+				background: linear-gradient(45deg, #333333, #626b73);
+				box-shadow: 0px 4px 30px rgba(63, 65, 67, 0.6);
+			}
+
+			&.codepen {
+				background: linear-gradient(45deg, #324e63, #414447);
+				box-shadow: 0px 4px 30px rgba(55, 75, 90, 0.6);
+			}
+
+			&.link {
+				background: linear-gradient(45deg, #d5135a, #f05924);
+				box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.6);
+			}
+
+		}
+
+		.icon-font {
+			display: inline-flex;
+		}
+
+	}
+}

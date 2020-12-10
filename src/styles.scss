@@ -1,1 +1,215 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+	height: 100vh;
+	width: 100vw;
+
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// CUSTOM MAT-CARD whole app
+mat-card {
+	border: 1px solid white !important;
+	border-radius: 0.5rem !important;
+	background-color: rgba($color: #F5F5F5, $alpha: 0.5) !important;
+	margin: 0.5rem !important;
+}
+
+// estilo para la barra principal
+.mat-toolbar.mat-primary {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+// CUSTOM TOOLBAR SIDENAV
+.sidenav-toolbar {
+
+	a {
+		background-color: rgba($color: #000000, $alpha: 0.2);
+		display: flex;
+
+		&:active,
+		&:focus,
+		&:hover,
+		&:link,
+		&:visited {
+			color: inherit;
+			cursor: pointer;
+			height: 100%;
+			outline-style: none;
+			text-decoration: none;
+			width: 100%;
+
+		}
+
+		ngx-avatar {
+			height: 56px !important;
+			width: 56px !important;
+		}
+
+		.mat-list-item {
+			padding: 0 !important;
+			height: inherit !important;
+
+			.mat-list-item-content {
+				flex-direction: column !important;
+
+				img {
+					padding: 0;
+					width: 3.5rem;
+					height: 3.5rem;
+					align-self: baseline;
+				}
+
+				.mat-list-text {
+					line-height: 14px !important;
+					padding: 4px 0 0 0 !important;
+					color: whitesmoke;
+
+					.mat-line {
+						font-size: 12px !important;
+						margin-top: 4px !important;
+						text-overflow: ellipsis;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+	}
+}
+
+// CUSTOM APP - mat-tooltip
+.mat-tooltip {
+
+	&.tooltip,
+	&.fab-tooltip {
+		font-size: 0.9rem;
+
+		@media (max-width: 600px) {
+			font-size: 0.7rem;
+		}
+	}
+
+	&.fab-tooltip {
+		margin-right: 0.5rem;
+	}
+}
+
+// CUSTOM POSTS-LIST grid NGX-AVATAR 
+mat-grid-list .avatar-container {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+// CUSTOM POSTS EDIT & CREATE - mat-header
+.post-create-header>.mat-card-header-text {
+	margin: 0 !important;
+}
+
+// CUSTOM POSTS EDIT&CREATE  - mat-chip-list
+.mat-chip-list-wrapper {
+	margin-top: 0.5rem !important;
+}
+
+// CUSTOM PROFILE  - mat-header
+.profile-header>.mat-card-header-text {
+	margin: 8px 0 0 8px !important;
+}
+@media (min-width: 955px) and (max-width: 1040px){
+	.profile-header>.mat-card-header-text {
+		margin-left: 64px !important; 
+	}
+}
+
+// CUSTOM PROFILE - mat-tab
+.mat-tab-label-container {
+	z-index: inherit !important;
+}
+
+.mat-tab-body {
+	z-index: inherit !important;
+}
+
+// CUSTOM PROFILE info FONTAWESOME 
+app-profile-info .mat-list-text {
+	padding: 0 !important;
+
+	span.mat-list-icon {
+		vertical-align: bottom;
+		fill: currentColor;
+		font-size: 20px !important;
+	}
+}
+
+// CUSTOM PROFILE PROFILE form - mat-card-actions
+app-profile-form {
+	mat-card-actions {
+		margin: 0 !important;
+		max-width: 100% !important;
+	}
+}
+
+// CUSTOM PROFILE upload dialog  - mat-slider-horizontal
+.mat-slider-horizontal .mat-slider-track-fill,
+.mat-slider-horizontal .mat-slider-track-background {
+	background-color: #ff4081;
+}
+
+mat-dialog-container {
+	min-width: 20rem !important;
+}
+
+
+
+
+
+/***** CUSTOM SCROLL BAR ***/
+::-webkit-scrollbar {
+	width: 7px;
+	height: 7px;
+}
+
+::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #e1e1e1;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: #000000;
+}
+
+::-webkit-scrollbar-track {
+	background: #666666;
+	border: 0px none #ffffff;
+	border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+	background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+	background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}

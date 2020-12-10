@@ -1,0 +1,51 @@
+<div fxLayoutAlign="center">
+	<mat-card fxLayout="column" fxFlex="100" fxFlex.sm="65" fxFlex.gt-sm="65" *ngIf="post$ | async; let post;">
+		<div fxLayout="row" fxFlexAlign="start start">
+			<a [routerLink]="[ '/profile', post.author]">
+				<img matTooltip="{{ post.authorName }}" [matTooltipClass]="'tooltip'" mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" />
+			</a>
+			<mat-card-header>
+
+				<mat-card-title matTooltip="{{ 'post.go-to-original' | translate }}" [matTooltipClass]="'tooltip'">
+					<a href="{{ post.url }}" target="_blank">
+						{{ post.title | uppercase }}
+					</a>
+				</mat-card-title>
+
+				<mat-card-subtitle>
+					<time>
+						{{ (post.created_at*1000) | amDateFormat: 'DD-MM-YYYY HH:mm' }}
+						( {{ createdAt| amLocale: locale | amTimeAgo }} )
+					</time>
+				</mat-card-subtitle>
+
+			</mat-card-header>
+
+			<span fxFlex></span>
+
+			<button class="delete-button" mat-raised-button fxHide.lt-md color="accent" (click)="openDeletePostDlg(post)">Eliminar</button>
+			<button mat-mini-fab fxHide.gt-sm (click)="openDeletePostDlg(post)">
+				<mat-icon>delete</mat-icon>
+			</button>
+		</div>
+
+
+		<!-- only displays when this is in viewport -->
+		<img class="featured_img" [defaultImage]="placeholderImg" [lazyLoad]="post.featured_image">
+
+		<mat-card-content>
+
+			<div [innerHTML]="sanitizer.bypassSecurityTrustHtml(post.content)"> </div>
+		</mat-card-content>
+
+		<mat-divider [inset]="true"></mat-divider>
+
+		<mat-card-footer>
+			<mat-chip-list>
+				<mat-chip *ngFor="let tag of post.tags">{{ tag }}</mat-chip>
+			</mat-chip-list>
+		</mat-card-footer>
+
+	</mat-card>
+</div>
+<app-fab-edit-post></app-fab-edit-post>

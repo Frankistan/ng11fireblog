@@ -1,0 +1,22 @@
+<div>
+	<div mat-dialog-title>
+		{{ data.title | translate }}
+	</div>
+	<div mat-dialog-subtitle>
+		{{ data.subtitle | translate }}
+	</div>
+    <mat-dialog-actions align="end">
+		<button mat-raised-button 
+			(click)="onNoClick()" 
+			tabindex="-1" 
+			color="warn">
+			{{ 'dialog.action.cancel' | translate }} 
+		</button>
+		<button mat-button 
+			(click)="onConfirm()" tabindex="2" 
+			[mat-dialog-close]="data" 
+			cdkFocusInitial>
+			{{ 'dialog.action.confirm' | translate }} 
+		</button>
+    </mat-dialog-actions>
+</div>

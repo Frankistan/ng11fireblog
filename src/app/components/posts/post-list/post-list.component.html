@@ -1,0 +1,14 @@
+<ng-container *ngIf="mode$|async; then list else grid"></ng-container>
+
+<ng-template #list>
+	<app-post-list-view [data]=posts$|async></app-post-list-view>
+</ng-template>
+
+<ng-template #grid>
+	<app-post-grid-view [data]=posts$|async></app-post-grid-view>
+</ng-template>
+
+<mat-progress-bar style="margin: 0.5rem 0" *ngIf="loading$|async" color="primary" mode="indeterminate"></mat-progress-bar>
+
+<fab-scroll-to-top [search]="false"></fab-scroll-to-top>
+<app-fab-create-post></app-fab-create-post>

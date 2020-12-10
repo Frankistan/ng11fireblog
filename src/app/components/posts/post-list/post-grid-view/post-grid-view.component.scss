@@ -1,0 +1,66 @@
+mat-grid-list {
+	margin: 0.5rem;
+
+	a {
+		display: flex;
+
+		&:active,
+		&:focus,
+		&:hover,
+		&:link,
+		&:visited {
+			color: inherit;
+			cursor: pointer;
+			height: 100%;
+			outline-style: none;
+			text-decoration: none;
+			width: 100%;
+		}
+
+		mat-grid-tile {
+			border: 1px solid whitesmoke;
+			border-radius: 0.5rem;
+			background-color: rgba($color: #F5F5F5, $alpha: 0.5);
+			transition: all linear 0.2s !important;
+
+			&:hover {
+				transition: all linear 0.2s;
+				transform: scale(1.009, 1.1);
+				box-shadow: 2px 5px 10px 5px rgba(36, 36, 36, 0.57);
+				background-color: rgba($color: #F5F5F5, $alpha: 0.7);
+			}
+
+			mat-grid-tile-header {
+				padding: 0;
+
+				ngx-avatar {
+					display: flex;
+					width: 100%;
+				}
+			}
+
+			.mat-grid-tile-content{
+				text-align: center;
+			}
+
+			mat-grid-tile-footer {
+				span {
+					padding: 0 0.2rem;
+
+					&.interpunct {
+						font-weight: bold;
+					}
+
+					mat-icon {
+						margin-right: 4px;
+						color: whitesmoke;
+						font-size: 1rem;
+						height: 1rem;
+						width: 1rem;
+						vertical-align: text-top;
+					}
+				}
+			}
+		}
+	}
+}

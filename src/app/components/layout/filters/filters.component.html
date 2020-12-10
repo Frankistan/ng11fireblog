@@ -1,0 +1,51 @@
+<mat-card>
+	<form autocomplete="off" novalidate [formGroup]="form" (submit)="save()">
+		<div fxLayout="row" fxLayoutAlign="space-between stretch">
+			<button fxFlex.gt-xs="45%" type="submit" color="primary" mat-raised-button >
+				<mat-icon fxHide fxShow.xs="true">check</mat-icon>
+				<span fxHide.xs="true" [translate]="'post.filters.save'"></span>
+			</button>
+			<button fxFlex.gt-xs="45%" type="button" color="accent" mat-stroked-button (click)="reset()" >
+				<mat-icon fxHide fxShow.xs="true">restore</mat-icon>
+				<span fxHide.xs="true"[translate]="'post.filters.reset'"></span>
+			</button>
+		</div>
+		<mat-card-content fxLayout="column">
+			<mat-divider></mat-divider>
+			<mat-radio-group formControlName="author" fxLayout="column">
+
+				<mat-radio-button *ngFor="let author of authors" 
+					[checked]="author.selected"
+					[value]="author.uid" >
+					{{ author.displayName=="" ? ("post.filters.all-authors" | translate) : author.displayName }}
+				</mat-radio-button>
+
+			</mat-radio-group>
+
+			<mat-form-field>
+				<input matInput 
+					[matDatepickerFilter]="myFilter" 
+					[matDatepicker]="begin_date" 
+					[min]="filtersService.minimum" 
+					[max]="filtersService.maximum" 
+					placeholder="{{'post.filters.begin-date' | translate}}"
+					formControlName="minDate" />
+				<mat-datepicker-toggle matSuffix [for]="begin_date"></mat-datepicker-toggle>
+				<mat-datepicker #begin_date></mat-datepicker>
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput 
+					[matDatepickerFilter]="myFilter" 
+					[matDatepicker]="end_date" 
+					[min]="filtersService.minimum" 
+					[max]="filtersService.maximum" 
+					placeholder="{{ 'post.filters.end-date' | translate }}" 
+					formControlName="maxDate" />
+				<mat-datepicker-toggle matSuffix [for]="end_date"></mat-datepicker-toggle>
+				<mat-datepicker #end_date></mat-datepicker>
+			</mat-form-field>
+
+		</mat-card-content>
+	</form>
+</mat-card>

@@ -1,0 +1,43 @@
+<mat-toolbar color="primary" class="mat-elevation-z11">
+
+	<ng-container [ngSwitch]="title">
+
+		<ng-container *ngSwitchCase="'posts.list'">
+			<app-btn-drawer></app-btn-drawer>
+			<span fxFlex></span>
+			<app-search-box fxFlex="80" fxFlex.md="70"></app-search-box>
+		</ng-container>
+
+		<ng-container *ngSwitchCase="'login'">
+			<app-breadcrumb></app-breadcrumb>
+			<span fxFlex></span>
+			<app-btn-lang></app-btn-lang>
+		</ng-container>
+
+		<ng-container *ngSwitchCase="'register'">
+			<app-breadcrumb></app-breadcrumb>
+			<span fxFlex></span>
+			<app-btn-login></app-btn-login>
+			<app-btn-lang></app-btn-lang>
+		</ng-container>
+
+		<ng-container *ngSwitchCase="'reset-password'">
+			<app-breadcrumb></app-breadcrumb>
+			<span fxFlex></span>
+			<app-btn-login></app-btn-login>
+			<app-btn-lang></app-btn-lang>
+		</ng-container>
+
+		<ng-container *ngSwitchCase="'search'">
+			<app-btn-drawer></app-btn-drawer>
+			<app-search-box fxFlex="99" fxFlexAlign="center"></app-search-box>
+		</ng-container>
+
+		<ng-container *ngSwitchDefault>
+			<app-btn-drawer></app-btn-drawer>
+			<app-breadcrumb></app-breadcrumb>
+		</ng-container>
+	</ng-container>
+
+	<ng-template #dynamicLoadComponent></ng-template>
+</mat-toolbar>

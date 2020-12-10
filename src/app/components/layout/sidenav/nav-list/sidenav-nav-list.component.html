@@ -1,0 +1,13 @@
+<mat-nav-list >
+	<a *ngFor="let item of items"
+		mat-list-item 
+		routerLinkActive="active" 
+		[routerLink]=item.url>
+		<mat-icon mdListIcon>{{ item.icon }}</mat-icon>
+		{{ 'sidenav.'+item.name | translate }}
+	</a>
+	<a mat-list-item (click)="logout()">
+		<mat-icon mdListIcon>power_settings_new</mat-icon>
+		{{ 'sidenav.logout' | translate }}
+	</a>
+</mat-nav-list> 
