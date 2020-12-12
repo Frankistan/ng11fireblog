@@ -17,7 +17,7 @@ export class SettingsService {
 
 	get form(): FormGroup {
 		return this._fb.group({
-			isDarkTheme: [false],
+			darkTheme: [false],
 			language: ['']
 		});
 	}
@@ -38,7 +38,7 @@ export class SettingsService {
 
 		let defaults = {
 			language: window.navigator.language,
-			isDark: false
+			darkTheme: false
 		};
 
 		let localSettings = JSON.parse(localStorage.getItem('settings')) || {};
@@ -48,7 +48,7 @@ export class SettingsService {
 		let settings = { ...defaults, ...userSettings };
 
 		localStorage.setItem('settings', JSON.stringify(settings));
-		
+
 		return settings;
 	}
 

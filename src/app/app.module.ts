@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MomentModule } from "ngx-moment";
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { NgxCaptchaModule } from "ngx-captcha";
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -64,6 +64,7 @@ import { SidenavToolbarComponent } from './components/layout/sidenav/toolbar/sid
 import { SpinnerComponent } from './components/layout/spinner/spinner.component';
 import { UploadDialogComponent } from './components/layout/dialogs/upload-dialog/upload-dialog.component';
 // SERVICES
+import { AppConfig, LoadConfig } from './services/app-config.service';
 import { AuthService } from './services/auth.service';
 import { CoreService } from './services/core.service';
 import { DynamicOverlay } from './services/dynamic-overlay';
@@ -86,6 +87,12 @@ import { PostToolbarComponent } from './components/layout/toolbar/post-toolbar/p
 import { ToolbarComponent } from './components/layout/toolbar/toolbar.component';
 import { ConfirmToolbarComponent } from './components/layout/toolbar/confirm-toolbar/confirm-toolbar.component';
 import { AppStoreModule } from './store/app-store.module';
+import { SplashScreenComponent } from './components/layout/splash-screen/splash-screen.component';
+
+//FUENTE:
+// https://asfo.medium.com/usando-app-initializer-en-angular-e822f3af3fb5
+// https://stackoverflow.com/questions/49707830/angular-how-to-correctly-implement-app-initializer
+// https://dzone.com/articles/how-to-use-the-app-initializer-token-to-hook-into
 
 @NgModule({
 	declarations: [
@@ -136,6 +143,7 @@ import { AppStoreModule } from './store/app-store.module';
 		PostToolbarComponent,
 		ToolbarComponent,
 		ConfirmToolbarComponent,
+		SplashScreenComponent,
 	],
 	imports: [
 		AppRoutingModule,
@@ -180,7 +188,14 @@ import { AppStoreModule } from './store/app-store.module';
 		NotificationService,
 		PaginatorService,
 		PostsService,
-		SettingsService,
+        SettingsService,
+        AppConfig,
+        {
+            provide: APP_INITIALIZER,
+            useFactory: LoadConfig,
+            deps: [AppConfig],
+            multi:true
+        }
 	],
 	bootstrap: [AppComponent]
 })

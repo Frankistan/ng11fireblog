@@ -1,10 +1,15 @@
-<mat-sidenav-container class="sidenav-container">
-	<mat-sidenav 
-		#drawer 
-		class="sidenav" 
-		fixedInViewport 
-		[attr.role]="(mobile$ | async) ? 'dialog' : 'navigation'" 
-		[mode]="(mobile$ | async) ? 'over' : 'side'" 
+<app-splash-screen
+    [animationType]="'fade-out'"
+    [duration]="2"
+    [animationDuration]="0.5">
+</app-splash-screen>
+<mat-sidenav-container class="sidenav-container" [ngClass]="{'dark-theme': config.darkTheme$ | async}">
+	<mat-sidenav
+		#drawer
+		class="sidenav"
+		fixedInViewport
+		[attr.role]="(mobile$ | async) ? 'dialog' : 'navigation'"
+		[mode]="(mobile$ | async) ? 'over' : 'side'"
 		[opened]="opened$ |async"
 		(click)="close()">
 		<app-sidenav-toolbar></app-sidenav-toolbar>
@@ -15,23 +20,24 @@
 		<!-- <mat-toolbar color="primary" class="mat-elevation-z11">
 			<ng-template #dynamicLoadComponent></ng-template>
 			<select (change)="selectName($event.target.value)">
-		
+
 				<option value="0">--Selecciona--</option>
 				<option value="posts.list">Login Toolbar</option>
-				<option value="2">Post Toolbar</option>
 			  </select>
-			
-			  
+
+
 		</mat-toolbar> -->
-		<app-spinner></app-spinner>
+        <app-spinner></app-spinner>
+
+
 		<router-outlet></router-outlet>
 	</mat-sidenav-content>
-	<mat-sidenav #filterNavRef 
+	<mat-sidenav #filterNavRef
 		class="filters-sidenav"
-		fixedInViewport 
-		position="end" 
-		attr.role="navigation" 
-		[mode]="'over'" 
+		fixedInViewport
+		position="end"
+		attr.role="navigation"
+		[mode]="'over'"
 		[opened]="false">
 		<app-filters class="filters-sidenav" [filterNavRef]="filterNavRef"></app-filters>
 	</mat-sidenav>

@@ -3,12 +3,12 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { DateAdapter } from '@angular/material/core';
 import { I18nService } from '@app/services/i18n.service';
-import moment from 'moment';
 import { PaginatorService, PageInit } from '@app/services/paginator.service';
 import { FiltersService } from '@app/services/filters.service';
 import { State } from '@app/store/reducers/app.reducer';
 import { Store } from '@ngrx/store';
 import { loadPosts, clearPosts } from '@app/store/actions/post.actions';
+import moment from 'moment';
 
 @Component({
 	selector: 'app-filters',
@@ -60,6 +60,7 @@ export class FiltersComponent implements OnInit {
 	];
 
 	myFilter = (d: any): boolean => {
+        if(!d) d= moment();
 		const day = d.day();
 		// Prevent Saturday and Sunday from being selected.
 		return day !== 0 && day !== 6;
@@ -92,7 +93,7 @@ export class FiltersComponent implements OnInit {
 		// this.filter();
 
 		// this.store.dispatch(clearPosts());
-		
+
 		const init: PageInit = {
 			collection: 'posts', orderBy: 'created_at', opts: {
 				reverse: true,
@@ -124,13 +125,13 @@ export class FiltersComponent implements OnInit {
 	filter(opts) {
 
 		// this.store.dispatch(clearPosts());
-	
+
 		const init: PageInit = {
 			collection: 'posts', orderBy: 'created_at', opts: opts
 		};
-	
+
 		this.store.dispatch(loadPosts({init}));
-	
+
 	}
 
 }

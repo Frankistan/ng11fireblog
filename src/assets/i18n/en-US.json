@@ -89,7 +89,7 @@
 			"asc": "Oldest first",
 			"desc": "Newest first"
 		},
-		"sort-by-title": "Title"	
+		"sort-by-title": "Title"
 	},
 	"post": {
 		"filters": {
@@ -156,7 +156,7 @@
 		"logged_in": "You are already logged in",
 		"close": "CLOSE",
 		"reset_pwd": "Email sent, please check your inbox",
-		
+
 		"profile": "Your Profile has been updated",
 		"firebase": {
 			"auth/account-exists-with-different-credential": "Account already exists with differents credentials",
@@ -222,7 +222,7 @@
 		"appearance": {
 			"section": "Appearance",
 			"title": "Change the current theme",
-			"description": "Choose between light and dark theme"
+			"description": "Try the dark theme"
 		},
 		"language": {
 			"title": "Change the language app",
